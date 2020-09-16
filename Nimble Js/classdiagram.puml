@@ -1,0 +1,36 @@
+@startuml "Class Diagram"
+class Lessor  <<Entity>> 
+ { 
+  - name : String
+ }
+
+class Hirer  <<Entity>>
+ {
+
+  -name : String
+  -location
+  -bookings
+ }
+
+class Booking 
+ {
+
+   +lessor
+   +hirer
+   +origin
+   +belonging
+ }
+   
+class Items 
+ {
+   +id
+   +type
+   +explanation
+   +itemColor
+ }
+
+   
+Hirer *--> Booking
+Items *--> Lessor
+Lessor *--> Booking
+@enduml
